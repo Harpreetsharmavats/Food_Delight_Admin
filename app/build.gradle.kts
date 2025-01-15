@@ -5,13 +5,13 @@ plugins {
 
 android {
     namespace = "com.example.fooddelightadmin"
-    compileSdk = 34
+    compileSdk = 35
 buildFeatures{
     viewBinding = true
 }
     defaultConfig {
         applicationId = "com.example.fooddelightadmin"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -36,7 +36,11 @@ buildFeatures{
         jvmTarget = "1.8"
     }
 }
-
+buildscript {
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.6.0") // Update this line
+    }
+}
 dependencies {
 
     implementation(libs.androidx.core.ktx)
