@@ -1,10 +1,8 @@
 package com.example.fooddelightadmin
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.fooddelightadmin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(binding.root)
+        binding.cardView2.setOnClickListener {
+            val intent = Intent(this,AllMenuItemActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
