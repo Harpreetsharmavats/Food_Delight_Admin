@@ -8,6 +8,17 @@
     android:background="@color/white"
     tools:context=".CreateNewUserActivity">
 
+    <ImageButton
+        android:id="@+id/createnewbackbtn"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="91dp"
@@ -51,6 +62,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:hint="Name"
+        app:circularflow_radiusInDP="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -112,7 +124,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/createnewuserbtn"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/green"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginTop="24dp"
@@ -120,4 +135,6 @@
         app:layout_constraintEnd_toEndOf="@+id/pass"
         app:layout_constraintStart_toStartOf="@+id/pass"
         app:layout_constraintTop_toBottomOf="@+id/pass" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

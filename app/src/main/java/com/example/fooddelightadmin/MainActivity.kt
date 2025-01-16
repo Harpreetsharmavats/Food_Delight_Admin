@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
         }
+        binding.cardView4.setOnClickListener {
+            val intent =Intent(this,CreateNewUserActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
