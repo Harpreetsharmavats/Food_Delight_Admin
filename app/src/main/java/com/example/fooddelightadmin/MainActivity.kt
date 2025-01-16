@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AllMenuItemActivity::class.java)
             startActivity(intent)
         }
+        binding.cardView5.setOnClickListener {
+            val intent = Intent(this,AdminProfileActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
