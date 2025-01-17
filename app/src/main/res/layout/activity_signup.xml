@@ -67,7 +67,8 @@
             android:layout_height="match_parent"
             android:drawablePadding="10dp"
             android:inputType="none"
-            android:text="Enter your city" />
+            android:text="Enter your city"
+            android:background="@drawable/edittextshape"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +93,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="Name"
+        android:hint="Name of restaurent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
@@ -103,6 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
+            android:background="@drawable/edittextshape"
 
             />
 
@@ -129,7 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
-
+            android:background="@drawable/edittextshape"
             />
 
 
@@ -154,7 +156,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
-
+            android:background="@drawable/edittextshape"
             />
 
 
@@ -174,7 +176,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:background="@drawable/edittextshape"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>

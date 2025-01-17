@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
             val intent =Intent(this,CreateNewUserActivity::class.java)
             startActivity(intent)
         }
+        binding.cardView3.setOnClickListener {
+            val intent = Intent(this,AddItemsActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
