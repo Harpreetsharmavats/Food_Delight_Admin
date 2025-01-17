@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AddItemsActivity::class.java)
             startActivity(intent)
         }
+        binding.cardView7.setOnClickListener {
+            val intent = Intent(this,OutForDeliveryActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
