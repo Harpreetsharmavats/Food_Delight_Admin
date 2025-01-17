@@ -49,11 +49,11 @@
             android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView8"
+                android:id="@+id/pendingorders"
                 android:layout_width="115dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cardView10"
+                app:layout_constraintEnd_toStartOf="@+id/completedorders"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -104,13 +104,13 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView10"
+                android:id="@+id/completedorders"
                 android:layout_width="115dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cardView9"
+                app:layout_constraintEnd_toStartOf="@+id/earnings"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardView8"
+                app:layout_constraintStart_toEndOf="@+id/pendingorders"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -160,13 +160,13 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView9"
+                android:id="@+id/earnings"
                 android:layout_width="115dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardView10"
+                app:layout_constraintStart_toEndOf="@+id/completedorders"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -218,13 +218,13 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/addmenu"
         android:layout_width="150dp"
         android:layout_height="85dp"
         android:layout_marginTop="50dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="7dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardView2"
+        app:layout_constraintEnd_toStartOf="@+id/allmenuitems"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" >
@@ -260,7 +260,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/allmenuitems"
         android:layout_width="150dp"
         android:layout_height="85dp"
         android:layout_marginTop="50dp"
@@ -268,7 +268,7 @@
         app:cardElevation="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cardView3"
+        app:layout_constraintStart_toEndOf="@+id/addmenu"
         app:layout_constraintTop_toBottomOf="@+id/cardView" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -302,16 +302,16 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView5"
+        android:id="@+id/profile"
         android:layout_width="150dp"
         android:layout_height="85dp"
         android:layout_marginTop="32dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="7dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardView4"
+        app:layout_constraintEnd_toStartOf="@+id/createnewuser"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" >
+        app:layout_constraintTop_toBottomOf="@+id/addmenu" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -344,7 +344,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView4"
+        android:id="@+id/createnewuser"
         android:layout_width="150dp"
         android:layout_height="85dp"
         android:layout_marginTop="32dp"
@@ -352,8 +352,8 @@
         app:cardElevation="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cardView5"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" >
+        app:layout_constraintStart_toEndOf="@+id/profile"
+        app:layout_constraintTop_toBottomOf="@+id/allmenuitems" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -386,16 +386,16 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView7"
+        android:id="@+id/orderdispatched"
         android:layout_width="150dp"
         android:layout_height="85dp"
         android:layout_marginTop="32dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="7dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardView6"
+        app:layout_constraintEnd_toStartOf="@+id/logout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5" >
+        app:layout_constraintTop_toBottomOf="@+id/profile" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -428,7 +428,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView6"
+        android:id="@+id/logout"
         android:layout_width="150dp"
         android:layout_height="85dp"
         android:layout_marginTop="32dp"
@@ -436,8 +436,8 @@
         app:cardElevation="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cardView7"
-        app:layout_constraintTop_toBottomOf="@+id/cardView4" >
+        app:layout_constraintStart_toEndOf="@+id/orderdispatched"
+        app:layout_constraintTop_toBottomOf="@+id/createnewuser" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

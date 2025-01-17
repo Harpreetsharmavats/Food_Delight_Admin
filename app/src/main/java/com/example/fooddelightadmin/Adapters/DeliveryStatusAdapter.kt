@@ -25,7 +25,7 @@ class DeliveryStatusAdapter(private val customername:ArrayList<String>,private v
             binding.apply {
                 name.text = customername[position]
                 statusmoney.text = moneystatus[position]
-                val colorMap = mapOf("Received" to Color.GREEN,"NotReceived" to Color.RED,"Pending" to Color.GRAY)
+                val colorMap = mapOf("received" to Color.GREEN,"Notreceived" to Color.RED,"pending" to Color.GRAY)
                 statusmoney.setTextColor(colorMap[moneystatus[position]]?:Color.BLACK)
                 deliverystatus.backgroundTintList = ColorStateList.valueOf(colorMap[moneystatus[position]]?:Color.BLACK)
 

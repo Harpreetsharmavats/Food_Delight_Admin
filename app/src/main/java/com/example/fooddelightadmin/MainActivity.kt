@@ -13,23 +13,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(binding.root)
-        binding.cardView2.setOnClickListener {
+        binding.allmenuitems.setOnClickListener {
             val intent = Intent(this,AllMenuItemActivity::class.java)
             startActivity(intent)
         }
-        binding.cardView5.setOnClickListener {
+        binding.profile.setOnClickListener {
             val intent = Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
         }
-        binding.cardView4.setOnClickListener {
+        binding.createnewuser.setOnClickListener {
             val intent =Intent(this,CreateNewUserActivity::class.java)
             startActivity(intent)
         }
-        binding.cardView3.setOnClickListener {
+        binding.addmenu.setOnClickListener {
             val intent = Intent(this,AddItemsActivity::class.java)
             startActivity(intent)
         }
-        binding.cardView7.setOnClickListener {
+        binding.orderdispatched.setOnClickListener {
             val intent = Intent(this,OutForDeliveryActivity::class.java)
             startActivity(intent)
         }
