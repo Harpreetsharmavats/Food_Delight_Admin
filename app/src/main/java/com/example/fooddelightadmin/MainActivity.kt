@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,OutForDeliveryActivity::class.java)
             startActivity(intent)
         }
+        binding.pendingorders.setOnClickListener {
+            val intent = Intent(this,PendingOrderActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

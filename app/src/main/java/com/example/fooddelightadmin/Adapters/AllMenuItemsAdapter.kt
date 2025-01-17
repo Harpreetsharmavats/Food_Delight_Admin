@@ -60,11 +60,10 @@ class AllMenuItemsAdapter(
         }
 
         fun DeleteItem(position: Int) {
-            menuitems.removeAt(position)
-                menuimage.removeAt(position)
-            price.removeAt(position)
-            notifyItemRemoved(position)
-            notifyItemRangeChanged(position,menuquantity.size)
+            menuitems.removeAt(adapterPosition)
+
+            notifyItemRemoved(adapterPosition)
+            notifyItemRangeChanged(adapterPosition,menuquantity.size)
 
         }
 
