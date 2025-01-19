@@ -65,10 +65,10 @@
             android:id="@+id/listofcity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/edittextshape"
             android:drawablePadding="10dp"
             android:inputType="none"
-            android:text="Enter your city"
-            android:background="@drawable/edittextshape"/>
+            android:text="Enter your city" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -85,7 +85,7 @@
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
 
         android:id="@+id/name"
         android:layout_width="0dp"
@@ -93,25 +93,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="Name of restaurent"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/black"
+        android:hint="Name of restaurant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:startIconDrawable="@drawable/user">
+
+        />
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:background="@drawable/edittextshape"
-
-            />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
 
         android:id="@+id/nameofrestaurent"
         android:layout_width="0dp"
@@ -120,24 +114,17 @@
         android:layout_marginTop="8dp"
 
         android:layout_marginEnd="16dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/black"
         android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        app:startIconDrawable="@drawable/user">
+        app:layout_constraintTop_toBottomOf="@id/name" />
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:background="@drawable/edittextshape"
-            />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
 
         android:id="@+id/email"
         android:layout_width="0dp"
@@ -145,42 +132,28 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/mail"
+        android:drawablePadding="10dp"
         android:hint="Email or Phone Number"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameofrestaurent"
-        app:startIconDrawable="@drawable/mail">
+        app:layout_constraintTop_toBottomOf="@+id/nameofrestaurent" />
 
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:background="@drawable/edittextshape"
-            />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/pass"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="10dp"
         android:hint="Password"
         app:layout_constraintEnd_toEndOf="@+id/email"
         app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        app:startIconDrawable="@drawable/lock">
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:background="@drawable/edittextshape"/>
-
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/createaccount"
@@ -189,8 +162,8 @@
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/green"
-        android:textColor="@color/white"
         android:text="Create Account"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/pass"
         app:layout_constraintStart_toStartOf="@+id/pass"
         app:layout_constraintTop_toBottomOf="@+id/pass" />

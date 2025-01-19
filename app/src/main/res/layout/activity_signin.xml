@@ -48,11 +48,11 @@
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
 
         android:id="@+id/email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="57dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -60,39 +60,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:startIconDrawable="@drawable/mail">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:background="@drawable/edittextshape"
+android:drawableLeft="@drawable/mail"
+        android:drawableTint="@color/black"
+        android:drawablePadding="10dp"
+        android:background="@drawable/edittextshape"
 
             />
 
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/pass"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="57dp"
         android:layout_marginTop="8dp"
         android:hint="Password"
         app:layout_constraintEnd_toEndOf="@+id/email"
         app:layout_constraintStart_toStartOf="@+id/email"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        app:startIconDrawable="@drawable/lock">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:background="@drawable/edittextshape"/>
+android:drawableLeft="@drawable/lock"
+        android:drawableTint="@color/black"
+        android:drawablePadding="10dp"
+        android:background="@drawable/edittextshape"/>
 
 
-    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/textView6"

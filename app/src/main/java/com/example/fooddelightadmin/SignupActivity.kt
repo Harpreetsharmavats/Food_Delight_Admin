@@ -18,15 +18,17 @@ import com.google.firebase.ktx.Firebase
 
 
 class SignupActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var name: String
+    private lateinit var nameofrestaurant: String
+    private lateinit var email: String
+    private lateinit var password: String
+    private lateinit var database: DatabaseReference
     private val binding: ActivitySignupBinding by lazy {
         ActivitySignupBinding.inflate(layoutInflater)
     }
-private lateinit var auth: FirebaseAuth
-private lateinit var name: String
-private lateinit var nameofrestaurant: String
-private lateinit var email: String
-private lateinit var password: String
-private lateinit var database: DatabaseReference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,15 +40,15 @@ private lateinit var database: DatabaseReference
 
 
        binding.createaccount.setOnClickListener {
-           email = binding.email.editText.toString().trim()
-           password = binding.pass.editText.toString().trim()
-           name = binding.name.editText.toString().trim()
-           nameofrestaurant = binding.nameofrestaurent.editText.toString().trim()
+           email = binding.email.text.toString().trim()
+           password = binding.pass.text.toString().trim()
+           name = binding.name.text.toString().trim()
+           nameofrestaurant = binding.nameofrestaurent.text.toString().trim()
 
            if (email.isBlank() || password.isBlank() || nameofrestaurant.isBlank() || name.isBlank()){
                Toast.makeText(this,"Please fill the all details",Toast.LENGTH_SHORT).show()
            }else{
-               createaccount(email,password)
+               createAccount(email,password)
            }
 
 
@@ -61,16 +63,17 @@ private lateinit var database: DatabaseReference
         autoCompleteTextView.setAdapter(adapter)
     }
 
-    private fun createaccount(email: String, password: String) {
+    private fun createAccount(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
             if (task.isSuccessful){
                 Toast.makeText(this,"Account is created",Toast.LENGTH_SHORT).show()
                 saveUserdetails()
                 val intent = Intent(this,SigninActivity::class.java)
                 startActivity(intent)
+                finish()
             }else{
                 Toast.makeText(this,"Account creation failed",Toast.LENGTH_SHORT).show()
-                Log.d("Account","createaccount: Failure",task.exception)
+                Log.d("Account","createAccount: Failure",task.exception)
             }
 
         }
@@ -78,10 +81,10 @@ private lateinit var database: DatabaseReference
 
     private fun saveUserdetails() {
 
-        name = binding.name.editText.toString().trim()
-        nameofrestaurant = binding.nameofrestaurent.editText.toString().trim()
-        email = binding.email.editText.toString().trim()
-        password = binding.pass.editText.toString().trim()
+        name = binding.name.text.toString().trim()
+        nameofrestaurant = binding.nameofrestaurent.text.toString().trim()
+        email = binding.email.text.toString().trim()
+        password = binding.pass.text.toString().trim()
         val user = UserModel(email,password,name,nameofrestaurant)
         val userId:String = FirebaseAuth.getInstance().currentUser!!.uid
         database.child("user").child(userId).setValue(user)
