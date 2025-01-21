@@ -64,10 +64,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="5dp"
-
                     android:background="@drawable/edittextshape"
-                    />
+
+                    android:elevation="5dp" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -89,9 +88,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="5dp"
-
                     android:background="@drawable/edittextshape"
+
+                    android:elevation="5dp"
 
                     />
 
@@ -112,7 +111,7 @@
                 android:paddingStart="15dp"
                 android:paddingRight="15dp"
                 android:text="Select Image"
-                
+
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -136,13 +135,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="cursive"
                 android:gravity="center_vertical"
                 android:paddingStart="10dp"
                 android:text="Short Description"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="cursive"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/selectimage"
                 app:layout_constraintStart_toStartOf="@+id/selectimage"
                 app:layout_constraintTop_toBottomOf="@+id/selectedimage" />
@@ -152,14 +151,11 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:paddingStart="10dp"
-                android:text=" Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad"
+                android:background="@color/white"
+                android:hint="Add description here"
                 android:inputType="textMultiLine"
                 android:minHeight="57dp"
-                android:background="@color/white"
+                android:paddingStart="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/textView26"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView26"
@@ -172,13 +168,13 @@ ut labore et dolore magna aliqua. Ut enim ad"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="cursive"
                 android:gravity="center_vertical"
                 android:paddingStart="10dp"
                 android:text="Ingredients"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="cursive"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/textView26"
                 app:layout_constraintHorizontal_bias="0.692"
                 app:layout_constraintStart_toStartOf="@+id/textView26"
@@ -189,14 +185,10 @@ ut labore et dolore magna aliqua. Ut enim ad"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:hint="Add ingredient here"
                 android:inputType="textMultiLine"
                 android:minHeight="57dp"
                 android:paddingStart="10dp"
-                android:text=" Noddle \n
-Salad\n
-Burger\n
-Herbal Pan Cake\n
-Momos"
                 app:layout_constraintEnd_toEndOf="@+id/textView27"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView27"
@@ -208,10 +200,10 @@ Momos"
                 android:layout_width="200dp"
                 android:layout_height="57dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"
                 android:backgroundTint="@color/green"
                 android:text="Add Item"
                 android:textColor="@color/white"
-android:layout_marginBottom="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

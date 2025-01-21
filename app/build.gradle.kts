@@ -68,4 +68,6 @@ dependencies {
     // Also add the dependency for the Google Play services library and specify its version
     implementation("com.google.android.gms:play-services-auth:21.3.0")
     implementation ("com.facebook.android:facebook-login:latest.release")
+    //Glide
+    implementation (libs.glide)
 }
