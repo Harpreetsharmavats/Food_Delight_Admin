@@ -131,6 +131,7 @@ class SigninActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
+                    Toast.makeText(this,"Authentication successful",Toast.LENGTH_SHORT).show()
                     val user = auth.currentUser
                     startActivity(Intent(this,MainActivity::class.java))
                 } else {
