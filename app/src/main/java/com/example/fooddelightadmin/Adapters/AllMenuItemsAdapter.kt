@@ -9,10 +9,12 @@ import com.bumptech.glide.Glide
 import com.example.fooddelightadmin.Models.AllMenu
 
 import com.example.fooddelightadmin.databinding.AllmenuitemsBinding
+import com.google.firebase.database.DatabaseReference
 
 class AllMenuItemsAdapter(
     private val context: Context,
-    private val menuList: ArrayList<AllMenu>
+    private val menuList: ArrayList<AllMenu>,
+    databaseReference: DatabaseReference
 ) : RecyclerView.Adapter<AllMenuItemsAdapter.AllMenuViewHolder>() {
     private val menuQuantity = IntArray(menuList.size) { 1 }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllMenuViewHolder {

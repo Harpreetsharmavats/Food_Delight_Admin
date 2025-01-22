@@ -70,7 +70,7 @@ class AddItemsActivity : AppCompatActivity() {
                     )
                     newItemKey?.let{
                        key ->
-                        menuRef.child(key).setValue(newItems).addOnSuccessListener {
+                        menuRef.child(key).child("menu").setValue(newItems).addOnSuccessListener {
                             Toast.makeText(this,"Data uploaded successfully",Toast.LENGTH_SHORT).show()
                         }
                             
