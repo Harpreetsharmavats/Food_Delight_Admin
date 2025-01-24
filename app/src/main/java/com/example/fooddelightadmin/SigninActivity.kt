@@ -54,14 +54,14 @@ class SigninActivity : AppCompatActivity() {
         database = Firebase.database.reference
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-//loginButton= findViewById(R.id.facebookbtn)
+
         callbackManager = CallbackManager.Factory.create()
         binding.facebookbtn.setOnClickListener {
             loginFacebook()
 
         }
 
-       
+
         binding.loginbtn.setOnClickListener {
             email = binding.email.text.toString().trim()
             password = binding.pass.text.toString().trim()
@@ -122,50 +122,32 @@ class SigninActivity : AppCompatActivity() {
                 }
             }
         }
-    private fun handleFacebookAccessToken(token: AccessToken) {
-        Log.d(TAG, "handleFacebookAccessToken:$token")
 
-        val credential = FacebookAuthProvider.getCredential(token.token)
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success")
-                    Toast.makeText(this,"Authentication successful",Toast.LENGTH_SHORT).show()
-                    val user = auth.currentUser
-                    startActivity(Intent(this,MainActivity::class.java))
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    Toast.makeText(
-                        baseContext,
-                        "Authentication failed.",
-                        Toast.LENGTH_SHORT,
-                    ).show()
-                    updateUI(null)
-                }
-            }
-    }
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         // Pass the activity result back to the Facebook SDK
         callbackManager.onActivityResult(requestCode, resultCode, data)
     }
+
     private fun updateUI(user: FirebaseUser?) {
 
     }
 
     override fun onStart() {
         super.onStart()
-       val currentUser = Firebase.auth
-        startActivity(Intent(this, MainActivity::class.java))
-       finish()
-   }
-    companion object {
-        private const val TAG = "FacebookLogin"
+        val currentUser = Firebase.auth
+        if (currentUser != null){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        finish()
     }
-    private fun loginFacebook(){
+
+
+
+    private fun loginFacebook() {
         val loginManager = LoginManager.getInstance()
         LoginManager.getInstance()
             .logInWithReadPermissions(this, listOf("email", "public_profile"))
@@ -187,5 +169,33 @@ class SigninActivity : AppCompatActivity() {
                 }
             },
         )
+    }
+    private fun handleFacebookAccessToken(token: AccessToken) {
+        Log.d(TAG, "handleFacebookAccessToken:$token")
+
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
+                    Toast.makeText(this, "Authentication successful", Toast.LENGTH_SHORT).show()
+                    //val user = auth.currentUser
+                    //updateUI(user)
+                    startActivity(Intent(this, MainActivity::class.java))
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Toast.makeText(
+                        baseContext,
+                        "Authentication failed.",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                    updateUI(null)
+                }
+            }
+    }
+    companion object {
+        private const val TAG = "FacebookLogin"
     }
 }
