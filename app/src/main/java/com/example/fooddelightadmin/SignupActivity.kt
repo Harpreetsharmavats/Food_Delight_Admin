@@ -87,6 +87,6 @@ class SignupActivity : AppCompatActivity() {
         password = binding.pass.text.toString().trim()
         val user = UserModel(email,password,name,nameofrestaurant)
         val userId:String = FirebaseAuth.getInstance().currentUser!!.uid
-        database.child("adminuser").child(userId).setValue(user)
+        database.child("adminUser").child(userId).setValue(user)
     }
 }
