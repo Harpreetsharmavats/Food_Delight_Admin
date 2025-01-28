@@ -138,11 +138,11 @@ class SigninActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val currentUser = Firebase.auth
+        val currentUser = Firebase.auth.currentUser
         if (currentUser != null){
             startActivity(Intent(this, MainActivity::class.java))
         }
-        finish()
+
     }
 
 
