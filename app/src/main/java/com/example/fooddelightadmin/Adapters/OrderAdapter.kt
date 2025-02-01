@@ -25,7 +25,7 @@ class OrderAdapter(private val customername:ArrayList<String>,private val orderq
         fun bind(position: Int) {
             binding.apply {
                 name.text = customername[position]
-                quantity.text = orderquantity[position]
+                totalamount.text = orderquantity[position]
                 foodimage.setImageResource(image[position])
 
                 acceptdispatchbtn.apply {
