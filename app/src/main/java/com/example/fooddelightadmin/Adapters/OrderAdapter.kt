@@ -1,46 +1,61 @@
 package com.example.fooddelightadmin.Adapters
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.fooddelightadmin.databinding.PendingordercardBinding
 
-class OrderAdapter(private val customername:ArrayList<String>,private val orderquantity:ArrayList<String>,private val image:ArrayList<Int>,private val context: Context): RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
+class OrderAdapter(
+    private val customerName: MutableList<String>,
+    private val orderPrice: MutableList<String>,
+    private val image: MutableList<String>,
+    private val context: Context
+) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
-        return OrderViewHolder(PendingordercardBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return OrderViewHolder(
+            PendingordercardBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
-    override fun getItemCount(): Int =customername.size
+    override fun getItemCount(): Int = customerName.size
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         holder.bind(position)
     }
 
-    inner class OrderViewHolder (private val binding: PendingordercardBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class OrderViewHolder(private val binding: PendingordercardBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         private var isAccepted = false
         fun bind(position: Int) {
             binding.apply {
-                name.text = customername[position]
-                totalamount.text = orderquantity[position]
-                foodimage.setImageResource(image[position])
-
+                name.text = customerName[position]
+                totalamount.text = orderPrice[position]
+                val uriString = image[position]
+                val uri = Uri.parse(uriString)
+                Glide.with(context).load(uri).into(foodimage)
                 acceptdispatchbtn.apply {
-                    if (!isAccepted){
+                    if (!isAccepted) {
                         text = "Accept"
-                    }else{
+                    } else {
                         text = "Dispatch"
                     }
                     setOnClickListener {
-                        if (!isAccepted){
+                        if (!isAccepted) {
                             text = "Dispatch"
                             isAccepted = true
                             showtoast("Order is Accepted")
-                        }else{
-                            customername.removeAt(adapterPosition)
+                        } else {
+                            customerName.removeAt(adapterPosition)
                             notifyItemRemoved(adapterPosition)
                             showtoast("Order is dispatched")
 
@@ -50,8 +65,9 @@ class OrderAdapter(private val customername:ArrayList<String>,private val orderq
             }
 
         }
-        private fun showtoast(message: String){
-            Toast.makeText(context,message, Toast.LENGTH_SHORT).show()
+
+        private fun showtoast(message: String) {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         }
 
     }
