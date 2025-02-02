@@ -87,7 +87,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/numberofpendingorders"
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginTop="2dp"
@@ -143,7 +143,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/imageView160" />
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/completenumbers"
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginTop="2dp"
@@ -199,7 +199,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
                     <TextView
-                        android:id="@+id/textView17"
+                        android:id="@+id/wholeearnings"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
