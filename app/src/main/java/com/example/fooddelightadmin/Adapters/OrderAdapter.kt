@@ -13,9 +13,12 @@ class OrderAdapter(
     private val customerName: MutableList<String>,
     private val orderPrice: MutableList<String>,
     private val image: MutableList<String>,
-    private val context: Context
+    private val context: Context,
+   // private val itemClicked : OnItemClicked
 ) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
-
+interface OnItemClicked{
+    fun onItemClickListener(position: Int)
+}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         return OrderViewHolder(
