@@ -10,11 +10,12 @@ import com.bumptech.glide.Glide
 import com.example.fooddelightadmin.databinding.PendingordercardBinding
 
 class OrderAdapter(
+    private val context: Context,
     private val customerName: MutableList<String>,
     private val orderPrice: MutableList<String>,
     private val image: MutableList<String>,
-    private val context: Context,
-   // private val itemClicked : OnItemClicked
+
+    private val itemClicked : OnItemClicked
 ) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 interface OnItemClicked{
     fun onItemClickListener(position: Int)
@@ -64,6 +65,9 @@ interface OnItemClicked{
 
                         }
                     }
+                }
+                itemView.setOnClickListener {
+                    itemClicked.onItemClickListener(position)
                 }
             }
 
