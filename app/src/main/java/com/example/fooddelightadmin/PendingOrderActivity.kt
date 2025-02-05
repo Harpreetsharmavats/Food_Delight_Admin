@@ -1,5 +1,6 @@
 package com.example.fooddelightadmin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +14,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class PendingOrderActivity : AppCompatActivity() {
+class PendingOrderActivity : AppCompatActivity(),OrderAdapter.OnItemClicked {
     private lateinit var auth: FirebaseAuth
     private lateinit var database : FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
@@ -72,7 +73,15 @@ class PendingOrderActivity : AppCompatActivity() {
 
     private fun setAdapter() {
         binding.pendingorderrv.layoutManager = LinearLayoutManager(this)
-        val adapter = OrderAdapter(listOfName,listOfTotalPrice,listOfIamgesofFirstFood,this)
+        val adapter = OrderAdapter(this,listOfName,listOfTotalPrice,listOfIamgesofFirstFood,this)
         binding.pendingorderrv.adapter = adapter
+    }
+
+
+    override fun onItemClickListener(position: Int) {
+        val intent = Intent(this,OrdersDetailsActivity::class.java)
+        val userOrderDetails = listOfOrderItems[position]
+        intent.putExtra("UserOrderDetails",userOrderDetails)
+        startActivity(intent)
     }
 }
