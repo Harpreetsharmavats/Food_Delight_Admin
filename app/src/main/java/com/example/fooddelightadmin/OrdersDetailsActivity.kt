@@ -35,7 +35,7 @@ class OrdersDetailsActivity : AppCompatActivity() {
 
     private fun getDataFromIntent() {
         val recoverOrderDetails = intent.getSerializableExtra("UserOrderDetails") as OrderDetails
-        if (recoverOrderDetails != null){
+        recoverOrderDetails.let {
             userName = recoverOrderDetails.userName
             address = recoverOrderDetails.address
             phone = recoverOrderDetails.phoneNumber
@@ -44,7 +44,9 @@ class OrdersDetailsActivity : AppCompatActivity() {
             foodImage = recoverOrderDetails.foodImage!!
             foodQuantity = recoverOrderDetails.foodQuantity!!
             foodPrice = recoverOrderDetails.foodPrice!!
+
         }
+
         setUserDetails()
         setAdapter()
     }

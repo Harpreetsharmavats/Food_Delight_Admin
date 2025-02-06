@@ -19,6 +19,8 @@ class OrderAdapter(
 ) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 interface OnItemClicked{
     fun onItemClickListener(position: Int)
+    fun onItemAcceptClickListener(position: Int)
+    fun onItemDispatchListener(position: Int)
 }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -58,10 +60,12 @@ interface OnItemClicked{
                             text = "Dispatch"
                             isAccepted = true
                             showtoast("Order is Accepted")
+                            itemClicked.onItemAcceptClickListener(position)
                         } else {
                             customerName.removeAt(adapterPosition)
                             notifyItemRemoved(adapterPosition)
                             showtoast("Order is dispatched")
+                            itemClicked.onItemDispatchListener(position)
 
                         }
                     }
