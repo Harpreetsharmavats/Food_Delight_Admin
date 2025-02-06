@@ -2,6 +2,8 @@ package com.example.fooddelightadmin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fooddelightadmin.Adapters.DeliveryStatusAdapter
 import com.example.fooddelightadmin.Models.OrderDetails
 import com.example.fooddelightadmin.databinding.ActivityOutForDeliveryBinding
 import com.google.firebase.database.DataSnapshot
@@ -14,7 +16,7 @@ class OutForDeliveryActivity : AppCompatActivity() {
         ActivityOutForDeliveryBinding.inflate(layoutInflater)
     }
     private lateinit var database: FirebaseDatabase
-    private val  listOfCompletedOrderItems:ArrayList<String> = arrayListOf()
+    private val  listOfCompletedOrderItems:MutableList<OrderDetails> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +37,13 @@ class OutForDeliveryActivity : AppCompatActivity() {
                 listOfCompletedOrderItems.clear()
                 for (orderSnapshot in snapshot.children){
                    val completeOrder = orderSnapshot.getValue(OrderDetails::class.java)
-                    completeOrder?.let { listOfCompletedOrderItems.add(it.toString())
+                    completeOrder?.let {
+                        listOfCompletedOrderItems.add(it)
                     }
 
                 }
                 listOfCompletedOrderItems.reverse()
-                //setAdapter(listOfCompletedOrderItems)
+                setAdapter()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -50,16 +53,17 @@ class OutForDeliveryActivity : AppCompatActivity() {
         })
     }
 
-   /* private fun setAdapter(listOfCompletedOrderItems: ArrayList<String>) {
+   private fun setAdapter() {
         val customerName = mutableListOf<String>()
-        val deliveryStatus = mutableListOf<Boolean>()
+        val moneyStatus = mutableListOf<Boolean>()
 
         for (order in this.listOfCompletedOrderItems){
-            order.userName?.let {  }
+            order.userName?.let { customerName.add(it) }
+            moneyStatus.add(order.paymentReceived)
         }
-        val adapter = DeliveryStatusAdapter()
+        val adapter = DeliveryStatusAdapter(customerName,moneyStatus)
         binding.outfordeliverrv.layoutManager = LinearLayoutManager(this)
         binding.outfordeliverrv.adapter = adapter
 
-    }*/
+    }
 }
