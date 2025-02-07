@@ -107,12 +107,21 @@ class PendingOrderActivity : AppCompatActivity(),OrderAdapter.OnItemClicked {
 
     override fun onItemDispatchListener(position: Int) {
         //Handle item dispatch and update database
+        val userRef = listOfOrderItems[position].userId
         val dispatchItemsPushKey = listOfOrderItems[position].itemPushKey
-        val dispatchOrderRef = database.reference.child("CompletedOrder").child(dispatchItemsPushKey!!)
+        val dispatchOrderRef = database.reference.child("user").child(userRef!!).child("CompletedOrder").child(dispatchItemsPushKey!!)
         dispatchOrderRef.setValue(listOfOrderItems[position])
             .addOnSuccessListener {
                 deleteThisItemFromOrderDetails(dispatchItemsPushKey)
+                completedOrder(position)
             }
+    }
+
+    private fun completedOrder(position: Int) {
+
+        val dispatchItemsPushKey = listOfOrderItems[position].itemPushKey
+        val dispatchOrderRef = database.reference.child("CompletedOrder").child(dispatchItemsPushKey!!)
+        dispatchOrderRef.setValue(listOfOrderItems[position])
     }
 
     private fun deleteThisItemFromOrderDetails(dispatchItemsPushKey: String){
