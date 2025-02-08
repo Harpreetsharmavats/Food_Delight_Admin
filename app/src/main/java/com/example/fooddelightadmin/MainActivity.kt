@@ -4,6 +4,7 @@ package com.example.fooddelightadmin
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fooddelightadmin.Models.OrderDetails
 import com.example.fooddelightadmin.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
+
 
         setContentView(binding.root)
         binding.allmenuitems.setOnClickListener {
@@ -51,10 +53,49 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 pendingOrders()
+        completedOrders()
+        wholeTimeEarning()
         binding.logout.setOnClickListener {
 
         }
 
+    }
+
+    private fun wholeTimeEarning() {
+        val listOfTotalPay = mutableListOf<Int>()
+        databaseReference = FirebaseDatabase.getInstance().getReference("CompletedOrder")
+        databaseReference.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(orderSnapshot in snapshot.children){
+                    val orderEarnings = orderSnapshot.getValue(OrderDetails::class.java)
+                    orderEarnings?.totalPrice?.replace("$", "")?.toIntOrNull()?.let {
+                        listOfTotalPay.add(it)
+                    }
+                }
+                binding.wholeearnings.text = listOfTotalPay.sum().toString() + "$"
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    private fun completedOrders() {
+        val completedOrderRef = database.reference.child("CompletedOrder")
+        var completedCount = 0
+        completedOrderRef.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                completedCount = snapshot.childrenCount.toInt()
+                binding.completenumbers.text = completedCount.toString()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
     private fun pendingOrders() {
