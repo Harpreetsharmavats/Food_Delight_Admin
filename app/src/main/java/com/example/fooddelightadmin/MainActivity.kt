@@ -105,6 +105,7 @@ pendingOrders()
             override fun onDataChange(snapshot: DataSnapshot) {
                 ordersCount = snapshot.childrenCount.toInt()
                 binding.numberofpendingorders.text = ordersCount.toString()
+
             }
 
             override fun onCancelled(error: DatabaseError) {

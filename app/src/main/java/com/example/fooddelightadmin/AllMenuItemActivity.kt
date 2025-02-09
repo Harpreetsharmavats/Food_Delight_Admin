@@ -34,9 +34,15 @@ class AllMenuItemActivity : AppCompatActivity() {
     }
 
     fun setAdapter() {
-        val adapter = AllMenuItemsAdapter(this@AllMenuItemActivity,menuItems,databaseReference)
+        val adapter = AllMenuItemsAdapter(this@AllMenuItemActivity,menuItems,databaseReference)/*{ position ->
+            deleteMenuItem(position)
+        }*/
         binding.allmenurv.layoutManager = LinearLayoutManager(this)
         binding.allmenurv.adapter =adapter
+    }
+
+    private fun deleteMenuItem(position: Any) {
+
     }
 
     private fun retrieveMenuItem() {
