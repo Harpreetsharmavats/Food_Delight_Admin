@@ -2,6 +2,7 @@ package com.example.fooddelightadmin
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddelightadmin.Adapters.AllMenuItemsAdapter
@@ -34,15 +35,25 @@ class AllMenuItemActivity : AppCompatActivity() {
     }
 
     fun setAdapter() {
-        val adapter = AllMenuItemsAdapter(this@AllMenuItemActivity,menuItems,databaseReference)/*{ position ->
-            deleteMenuItem(position)
-        }*/
+         adapter = AllMenuItemsAdapter(this@AllMenuItemActivity,menuItems,databaseReference){position ->
+             deleteMenuItem(position)
+         }
         binding.allmenurv.layoutManager = LinearLayoutManager(this)
         binding.allmenurv.adapter =adapter
     }
 
-    private fun deleteMenuItem(position: Any) {
-
+    private fun deleteMenuItem(position: Int) {
+val menuItemToDelete = menuItems[position]
+        val menuItemKey = menuItemToDelete.key
+        val menuRef = database.reference.child("menu").child(menuItemKey!!)
+        menuRef.removeValue().addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.allmenurv.adapter?.notifyItemRemoved(position)
+            }else{
+                Toast.makeText(this, "Item Not Deleted", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun retrieveMenuItem() {

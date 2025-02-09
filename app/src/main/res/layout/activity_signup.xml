@@ -45,51 +45,31 @@
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
 
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:id="@+id/address"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/white"
-        app:boxBackgroundColor="@color/white"
-        app:endIconDrawable="@drawable/arrow_down"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/home"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/black"
+        android:hint="Address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12">
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
 
+        />
 
-        <AutoCompleteTextView
-            android:id="@+id/listofcity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/edittextshape"
-            android:drawablePadding="10dp"
-            android:inputType="none"
-            android:text="Enter your city" />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Choose Your Location "
-        android:textColor="@color/green"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
 
         android:id="@+id/name"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -100,16 +80,14 @@
         android:hint="Name of restaurant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-
-        />
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 
 
     <EditText
 
         android:id="@+id/nameofrestaurent"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
 
@@ -128,31 +106,49 @@
 
         android:id="@+id/email"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/edittextshape"
         android:drawableLeft="@drawable/mail"
         android:drawablePadding="10dp"
-        android:hint="Email or Phone Number"
+        android:hint="Email "
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameofrestaurent" />
 
     <EditText
+
+        android:id="@+id/phone"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+
+        android:layout_marginTop="8dp"
+
+        android:background="@drawable/edittextshape"
+android:drawableLeft="@android:drawable/stat_sys_vp_phone_call"
+        android:drawableTint="@color/black"
+        android:drawablePadding="10dp"
+        android:hint="Phone Number"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@id/email"
+        app:layout_constraintStart_toStartOf="@id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <EditText
         android:id="@+id/pass"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/edittextshape"
         android:drawableLeft="@drawable/lock"
         android:drawablePadding="10dp"
         android:hint="Password"
-        app:layout_constraintEnd_toEndOf="@+id/email"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintEnd_toEndOf="@+id/phone"
+        app:layout_constraintStart_toStartOf="@+id/phone"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 
 
     <Button

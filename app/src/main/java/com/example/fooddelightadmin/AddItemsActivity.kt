@@ -83,6 +83,7 @@ class AddItemsActivity : AppCompatActivity() {
                 imageRef.downloadUrl.addOnSuccessListener {
                         downloadUrl ->
                     val newItems = AllMenu(
+                        newItemKey,
                         foodName = foodName,
                         foodPrice = foodPrice,
                         foodDescription = foodDescription,
