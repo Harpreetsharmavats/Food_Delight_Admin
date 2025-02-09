@@ -14,7 +14,7 @@ class AllMenuItemsAdapter(
     private val context: Context,
     private val menuList: ArrayList<AllMenu>,
     databaseReference: DatabaseReference,
-    //private val onDeleteItem : (position :Int)-> Unit
+    private val onDeleteItem : (position :Int)-> Unit
 ) : RecyclerView.Adapter<AllMenuItemsAdapter.AllMenuViewHolder>() {
     private val menuQuantity = IntArray(menuList.size) { 1 }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllMenuViewHolder {
@@ -54,10 +54,7 @@ class AllMenuItemsAdapter(
                     Decrement(position)
                 }
                 deleteitem.setOnClickListener {
-                    val itemPosition = adapterPosition
-                    if (itemPosition != RecyclerView.NO_POSITION) {
-                        DeleteItem(position)
-                    }
+                    onDeleteItem(position)
                 }
             }
 
