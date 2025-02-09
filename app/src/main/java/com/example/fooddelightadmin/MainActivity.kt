@@ -56,7 +56,9 @@ pendingOrders()
         completedOrders()
         wholeTimeEarning()
         binding.logout.setOnClickListener {
-
+auth.signOut()
+            startActivity(Intent(this,SigninActivity::class.java))
+            finish()
         }
 
     }
