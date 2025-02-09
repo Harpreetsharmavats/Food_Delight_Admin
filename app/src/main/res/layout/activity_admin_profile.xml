@@ -68,6 +68,40 @@
                 android:layout_weight="1"
                 android:fontFamily="cursive"
                 android:gravity="center"
+                android:text="Restaurant"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/nameofrestaurent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/profileedittextshape"
+            android:elevation="3dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="cursive"
+                android:gravity="center"
                 android:text="Name"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -219,8 +253,6 @@
                 android:layout_marginTop="2dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:drawablePadding="5dp"
-                android:drawableTint="@color/black"
                 android:ems="10"
                 android:gravity="center_vertical"
                 android:inputType="numberPassword" />

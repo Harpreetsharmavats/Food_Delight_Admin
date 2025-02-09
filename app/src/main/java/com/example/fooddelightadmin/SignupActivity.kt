@@ -39,12 +39,14 @@ class SignupActivity : AppCompatActivity() {
 
 
        binding.createaccount.setOnClickListener {
-           email = binding.email.text.toString().trim()
+           nameofrestaurant = binding.nameofrestaurent.text.toString().trim()
+           name = binding.name.text.toString().trim()
            address = binding.address.text.toString().trim()
+           email = binding.email.text.toString().trim()
            phone = binding.phone.text.toString().trim()
            password = binding.pass.text.toString().trim()
-           name = binding.name.text.toString().trim()
-           nameofrestaurant = binding.nameofrestaurent.text.toString().trim()
+
+
 
            if (email.isBlank() || password.isBlank() || nameofrestaurant.isBlank() || name.isBlank() || phone.isBlank() || address.isBlank()){
                Toast.makeText(this,"Please fill the all details",Toast.LENGTH_SHORT).show()
@@ -85,7 +87,7 @@ class SignupActivity : AppCompatActivity() {
         email = binding.email.text.toString().trim()
         phone = binding.phone.text.toString().trim()
         password = binding.pass.text.toString().trim()
-        val user = UserModel(address,name,nameofrestaurant,email,phone, password)
+        val user = UserModel(nameofrestaurant,name,address, email, phone, password)
         val userId:String = FirebaseAuth.getInstance().currentUser!!.uid
         database.child("adminUser").child(userId).setValue(user)
     }
