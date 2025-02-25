@@ -32,7 +32,7 @@ The Admin Panel for the Food Delivery App provides administrators with the abili
 
 1. Clone the repository:
    ```sh
- https://github.com/Harpreetsharmavats/Food_Delight_Admin/tree/master
+   https://github.com/Harpreetsharmavats/Food_Delight_Admin/tree/master
    ```
 2. Open the project in Android Studio.
 3. Connect Firebase to the project and configure the required services.
@@ -49,6 +49,7 @@ The Admin Panel for the Food Delivery App provides administrators with the abili
 
 Feel free to submit pull requests or report issues. Contributions are welcome!
 
+Made with ❤️ by Harpreet Sharma
 ---
 
 
